@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Speed Test Pro</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- САМЫЙ ВАЖНЫЙ СКРИПТ ДЛЯ СВЯЗИ С TELEGRAM -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Pro Speed Test</h1>
+        <p>Измерение реальной скорости между вашим браузером и сервером. Приложение автоматически адаптируется к любому типу сети.</p>
+
+        <div class="controls">
+            <button id="start_btn">Старт</button>
+            <div class="slider-container">
+                <label for="timeout_slider">Время каждого теста: <span id="slider_value">12</span> сек</label>
+                <input type="range" id="timeout_slider" min="10" max="20" value="12" step="1">
+            </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div id="progress_bar" class="progress-bar"></div>
+        </div>
+
+        <div class="results">
+            <div class="result-item">
+                <span class="label">Пинг (задержка)</span>
+                <span class="value" id="ping_output">-</span>
+            </div>
+            <div class="result-item">
+                <span class="label">Скорость загрузки (Download)</span>
+                <div class="value-container">
+                    <div class="adaptation-line" id="download_adaptation_line"></div>
+                    <span class="value" id="download_output">-</span>
+                </div>
+            </div>
+            <div class="result-item">
+                <span class="label">Скорость отправки (Upload)</span>
+                <div class="value-container">
+                    <div class="adaptation-line" id="upload_adaptation_line"></div>
+                    <span class="value" id="upload_output">-</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="results">
+            <div class="result-item">
+                <span class="label">📍 Ваше местоположение (Клиент)</span>
+                <span class="value" id="client_info_output">Определение...</span>
+            </div>
+            <div class="result-item">
+                <span class="label">☁️ Местоположение сервера</span>
+                <span class="value" id="server_info_output">Определение...</span>
+            </div>
+            <div class="result-item">
+                <span class="label">📡 Тип сети</span>
+                <span class="value" id="network_info_output">Определение...</span>
+            </div>
+        </div>
+
+        <pre id="log_output">Журнал выполнения будет здесь...</pre>
+    </div>
+
+    <!-- Подключаем наш основной скрипт как модуль -->
+    <script src="/static/js/main.js" type="module"></script>
+</body>
+</html>
